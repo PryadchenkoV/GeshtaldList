@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8C089DBB-0362-4852-9BC1-D01657970B3D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0341A11A-5CAF-41ED-86D4-C3566F537030"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/AddItemView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "onAdd()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC260D80-DC7A-41C0-9500-7BD466D5E13F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/ListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "addItem()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BC260D80-DC7A-41C0-9500-7BD466D5E13F - 9088ddbe9aefdd78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Geshtald.ListView.(onDelete in _7F5A3369CFD0CDCA03AB35C3F76883AA)(offsets: Foundation.IndexSet) -&gt; ()"
+                  moduleName = "Geshtald"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/work/Library/Autosave%20Information/Geshtald/Shared/ListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "202">
+               </Location>
+               <Location
+                  uuid = "BC260D80-DC7A-41C0-9500-7BD466D5E13F - 620c3c0ec828b638"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; __C.NSManagedObject in closure #1 () -&gt; () in Geshtald.ListView.(onDelete in _7F5A3369CFD0CDCA03AB35C3F76883AA)(offsets: Foundation.IndexSet) -&gt; ()"
+                  moduleName = "Geshtald"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/work/Library/Autosave%20Information/Geshtald/Shared/ListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "234">
+               </Location>
+               <Location
+                  uuid = "BC260D80-DC7A-41C0-9500-7BD466D5E13F - edaedfd9c8d648e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 (__C.NSManagedObject) -&gt; () in implicit closure #1 (__C.NSManagedObjectContext) -&gt; (__C.NSManagedObject) -&gt; () in closure #1 () -&gt; () in Geshtald.ListView.(onDelete in _7F5A3369CFD0CDCA03AB35C3F76883AA)(offsets: Foundation.IndexSet) -&gt; ()"
+                  moduleName = "Geshtald"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/work/Library/Autosave%20Information/Geshtald/Shared/ListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB18D3B9-15A4-40B8-9DCE-325E0560AEF7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/ListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "onDelete(offsets:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CB18D3B9-15A4-40B8-9DCE-325E0560AEF7 - 432792660256693f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Geshtald.ListView.(onMove in _7F5A3369CFD0CDCA03AB35C3F76883AA)(source: Foundation.IndexSet, destination: Swift.Int) -&gt; ()"
+                  moduleName = "Geshtald"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/work/Library/Autosave%20Information/Geshtald/Shared/ListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "373">
+               </Location>
+               <Location
+                  uuid = "CB18D3B9-15A4-40B8-9DCE-325E0560AEF7 - c71ce2db884eb60a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Geshtald.GeshtaldItem) -&gt; Geshtald.GeshtaldItem in closure #1 () -&gt; () in Geshtald.ListView.(onMove in _7F5A3369CFD0CDCA03AB35C3F76883AA)(source: Foundation.IndexSet, destination: Swift.Int) -&gt; ()"
+                  moduleName = "Geshtald"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/work/Library/Autosave%20Information/Geshtald/Shared/ListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA717A73-A123-4838-804A-3435E6CEA73C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/ListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "onMove(source:destination:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0210F6F2-6E4C-40F6-BA78-5844A9884C98"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/ListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

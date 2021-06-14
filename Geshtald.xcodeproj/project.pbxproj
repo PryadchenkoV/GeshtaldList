@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		962FDB1425FB4FF5001EFFBA /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FDB1325FB4FF5001EFFBA /* EmptyView.swift */; };
+		962FDB1525FB4FF5001EFFBA /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FDB1325FB4FF5001EFFBA /* EmptyView.swift */; };
+		962FDB1925FB5024001EFFBA /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FDB1825FB5024001EFFBA /* ToolbarView.swift */; };
+		962FDB1A25FB5024001EFFBA /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FDB1825FB5024001EFFBA /* ToolbarView.swift */; };
+		962FDB1E25FB95FF001EFFBA /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FDB1D25FB95FE001EFFBA /* ImagePickerView.swift */; };
+		962FDB1F25FB95FF001EFFBA /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FDB1D25FB95FE001EFFBA /* ImagePickerView.swift */; };
+		969C307525FAB9D6006941CD /* Geshtald.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 969C305F25FAB9D4006941CD /* Geshtald.xcdatamodeld */; };
+		969C307625FAB9D6006941CD /* Geshtald.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 969C305F25FAB9D4006941CD /* Geshtald.xcdatamodeld */; };
+		969C307725FAB9D6006941CD /* GeshtaldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C306125FAB9D4006941CD /* GeshtaldApp.swift */; };
+		969C307825FAB9D6006941CD /* GeshtaldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C306125FAB9D4006941CD /* GeshtaldApp.swift */; };
+		969C307925FAB9D6006941CD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C306225FAB9D4006941CD /* ListView.swift */; };
+		969C307A25FAB9D6006941CD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C306225FAB9D4006941CD /* ListView.swift */; };
+		969C307B25FAB9D6006941CD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C306325FAB9D4006941CD /* Persistence.swift */; };
+		969C307C25FAB9D6006941CD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C306325FAB9D4006941CD /* Persistence.swift */; };
+		969C307D25FAB9D6006941CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 969C306425FAB9D6006941CD /* Assets.xcassets */; };
+		969C307E25FAB9D6006941CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 969C306425FAB9D6006941CD /* Assets.xcassets */; };
+		969C309925FAC026006941CD /* GeshtaldItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C309725FAC026006941CD /* GeshtaldItem+CoreDataClass.swift */; };
+		969C309A25FAC026006941CD /* GeshtaldItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C309825FAC026006941CD /* GeshtaldItem+CoreDataProperties.swift */; };
+		969C309D25FAC02A006941CD /* GeshtaldItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C309825FAC026006941CD /* GeshtaldItem+CoreDataProperties.swift */; };
+		969C309E25FAC02A006941CD /* GeshtaldItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C309725FAC026006941CD /* GeshtaldItem+CoreDataClass.swift */; };
+		969C30A525FAC0A8006941CD /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C30A125FAC0A8006941CD /* AddItemView.swift */; };
+		969C30A625FAC0A8006941CD /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C30A125FAC0A8006941CD /* AddItemView.swift */; };
+		969C30A725FAC0A8006941CD /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C30A225FAC0A8006941CD /* FilterView.swift */; };
+		969C30A825FAC0A8006941CD /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C30A225FAC0A8006941CD /* FilterView.swift */; };
+		969C30A925FAC0A8006941CD /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C30A325FAC0A8006941CD /* BottomSheetView.swift */; };
+		969C30AA25FAC0A8006941CD /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C30A325FAC0A8006941CD /* BottomSheetView.swift */; };
+		969C30AB25FAC0A8006941CD /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C30A425FAC0A8006941CD /* ListItemView.swift */; };
+		969C30AC25FAC0A8006941CD /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C30A425FAC0A8006941CD /* ListItemView.swift */; };
+		E20A826A2677756000D7FAE6 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A82692677756000D7FAE6 /* AddImageView.swift */; };
+		E20A826B2677756000D7FAE6 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A82692677756000D7FAE6 /* AddImageView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		962FDB1325FB4FF5001EFFBA /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		962FDB1825FB5024001EFFBA /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		962FDB1D25FB95FE001EFFBA /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		969C306025FAB9D4006941CD /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
+		969C306125FAB9D4006941CD /* GeshtaldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeshtaldApp.swift; sourceTree = "<group>"; };
+		969C306225FAB9D4006941CD /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		969C306325FAB9D4006941CD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		969C306425FAB9D6006941CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		969C306925FAB9D6006941CD /* Geshtald.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geshtald.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		969C306C25FAB9D6006941CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		969C307125FAB9D6006941CD /* Geshtald.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geshtald.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		969C307325FAB9D6006941CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		969C307425FAB9D6006941CD /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		969C309725FAC026006941CD /* GeshtaldItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeshtaldItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		969C309825FAC026006941CD /* GeshtaldItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeshtaldItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		969C30A125FAC0A8006941CD /* AddItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		969C30A225FAC0A8006941CD /* FilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		969C30A325FAC0A8006941CD /* BottomSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		969C30A425FAC0A8006941CD /* ListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
+		E20A82692677756000D7FAE6 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		969C306625FAB9D6006941CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969C306E25FAB9D6006941CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		969C305925FAB9D3006941CD = {
+			isa = PBXGroup;
+			children = (
+				969C305E25FAB9D4006941CD /* Shared */,
+				969C306B25FAB9D6006941CD /* iOS */,
+				969C307225FAB9D6006941CD /* macOS */,
+				969C306A25FAB9D6006941CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		969C305E25FAB9D4006941CD /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E20A826C26777C9E00D7FAE6 /* AddItems */,
+				969C30A325FAC0A8006941CD /* BottomSheetView.swift */,
+				969C30A225FAC0A8006941CD /* FilterView.swift */,
+				969C30A425FAC0A8006941CD /* ListItemView.swift */,
+				969C306125FAB9D4006941CD /* GeshtaldApp.swift */,
+				969C306225FAB9D4006941CD /* ListView.swift */,
+				969C309725FAC026006941CD /* GeshtaldItem+CoreDataClass.swift */,
+				969C309825FAC026006941CD /* GeshtaldItem+CoreDataProperties.swift */,
+				969C306325FAB9D4006941CD /* Persistence.swift */,
+				969C306425FAB9D6006941CD /* Assets.xcassets */,
+				969C305F25FAB9D4006941CD /* Geshtald.xcdatamodeld */,
+				962FDB1325FB4FF5001EFFBA /* EmptyView.swift */,
+				962FDB1825FB5024001EFFBA /* ToolbarView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		969C306A25FAB9D6006941CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				969C306925FAB9D6006941CD /* Geshtald.app */,
+				969C307125FAB9D6006941CD /* Geshtald.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		969C306B25FAB9D6006941CD /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				969C306C25FAB9D6006941CD /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		969C307225FAB9D6006941CD /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				969C307325FAB9D6006941CD /* Info.plist */,
+				969C307425FAB9D6006941CD /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		E20A826C26777C9E00D7FAE6 /* AddItems */ = {
+			isa = PBXGroup;
+			children = (
+				969C30A125FAC0A8006941CD /* AddItemView.swift */,
+				962FDB1D25FB95FE001EFFBA /* ImagePickerView.swift */,
+				E20A82692677756000D7FAE6 /* AddImageView.swift */,
+			);
+			path = AddItems;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		969C306825FAB9D6006941CD /* Geshtald (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 969C308125FAB9D6006941CD /* Build configuration list for PBXNativeTarget "Geshtald (iOS)" */;
+			buildPhases = (
+				969C306525FAB9D6006941CD /* Sources */,
+				969C306625FAB9D6006941CD /* Frameworks */,
+				969C306725FAB9D6006941CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Geshtald (iOS)";
+			productName = "Geshtald (iOS)";
+			productReference = 969C306925FAB9D6006941CD /* Geshtald.app */;
+			productType = "com.apple.product-type.application";
+		};
+		969C307025FAB9D6006941CD /* Geshtald (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 969C308425FAB9D6006941CD /* Build configuration list for PBXNativeTarget "Geshtald (macOS)" */;
+			buildPhases = (
+				969C306D25FAB9D6006941CD /* Sources */,
+				969C306E25FAB9D6006941CD /* Frameworks */,
+				969C306F25FAB9D6006941CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Geshtald (macOS)";
+			productName = "Geshtald (macOS)";
+			productReference = 969C307125FAB9D6006941CD /* Geshtald.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		969C305A25FAB9D3006941CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					969C306825FAB9D6006941CD = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					969C307025FAB9D6006941CD = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 969C305D25FAB9D3006941CD /* Build configuration list for PBXProject "Geshtald" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 969C305925FAB9D3006941CD;
+			productRefGroup = 969C306A25FAB9D6006941CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				969C306825FAB9D6006941CD /* Geshtald (iOS) */,
+				969C307025FAB9D6006941CD /* Geshtald (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		969C306725FAB9D6006941CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969C307D25FAB9D6006941CD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969C306F25FAB9D6006941CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969C307E25FAB9D6006941CD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		969C306525FAB9D6006941CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969C307525FAB9D6006941CD /* Geshtald.xcdatamodeld in Sources */,
+				969C307B25FAB9D6006941CD /* Persistence.swift in Sources */,
+				962FDB1925FB5024001EFFBA /* ToolbarView.swift in Sources */,
+				962FDB1425FB4FF5001EFFBA /* EmptyView.swift in Sources */,
+				969C30A925FAC0A8006941CD /* BottomSheetView.swift in Sources */,
+				969C30A525FAC0A8006941CD /* AddItemView.swift in Sources */,
+				E20A826A2677756000D7FAE6 /* AddImageView.swift in Sources */,
+				969C309A25FAC026006941CD /* GeshtaldItem+CoreDataProperties.swift in Sources */,
+				969C30AB25FAC0A8006941CD /* ListItemView.swift in Sources */,
+				969C30A725FAC0A8006941CD /* FilterView.swift in Sources */,
+				962FDB1E25FB95FF001EFFBA /* ImagePickerView.swift in Sources */,
+				969C307725FAB9D6006941CD /* GeshtaldApp.swift in Sources */,
+				969C307925FAB9D6006941CD /* ListView.swift in Sources */,
+				969C309925FAC026006941CD /* GeshtaldItem+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969C306D25FAB9D6006941CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969C309E25FAC02A006941CD /* GeshtaldItem+CoreDataClass.swift in Sources */,
+				969C307625FAB9D6006941CD /* Geshtald.xcdatamodeld in Sources */,
+				962FDB1A25FB5024001EFFBA /* ToolbarView.swift in Sources */,
+				962FDB1525FB4FF5001EFFBA /* EmptyView.swift in Sources */,
+				969C30AA25FAC0A8006941CD /* BottomSheetView.swift in Sources */,
+				969C30A625FAC0A8006941CD /* AddItemView.swift in Sources */,
+				E20A826B2677756000D7FAE6 /* AddImageView.swift in Sources */,
+				969C309D25FAC02A006941CD /* GeshtaldItem+CoreDataProperties.swift in Sources */,
+				969C30AC25FAC0A8006941CD /* ListItemView.swift in Sources */,
+				969C30A825FAC0A8006941CD /* FilterView.swift in Sources */,
+				962FDB1F25FB95FF001EFFBA /* ImagePickerView.swift in Sources */,
+				969C307C25FAB9D6006941CD /* Persistence.swift in Sources */,
+				969C307825FAB9D6006941CD /* GeshtaldApp.swift in Sources */,
+				969C307A25FAB9D6006941CD /* ListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		969C307F25FAB9D6006941CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		969C308025FAB9D6006941CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		969C308225FAB9D6006941CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F83TYL4R4C;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Miem.Geshtald;
+				PRODUCT_NAME = Geshtald;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		969C308325FAB9D6006941CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F83TYL4R4C;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Miem.Geshtald;
+				PRODUCT_NAME = Geshtald;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		969C308525FAB9D6006941CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MGDFYF2DS8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Miem.Geshtald;
+				PRODUCT_NAME = Geshtald;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		969C308625FAB9D6006941CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MGDFYF2DS8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Miem.Geshtald;
+				PRODUCT_NAME = Geshtald;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		969C305D25FAB9D3006941CD /* Build configuration list for PBXProject "Geshtald" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969C307F25FAB9D6006941CD /* Debug */,
+				969C308025FAB9D6006941CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		969C308125FAB9D6006941CD /* Build configuration list for PBXNativeTarget "Geshtald (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969C308225FAB9D6006941CD /* Debug */,
+				969C308325FAB9D6006941CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		969C308425FAB9D6006941CD /* Build configuration list for PBXNativeTarget "Geshtald (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969C308525FAB9D6006941CD /* Debug */,
+				969C308625FAB9D6006941CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		969C305F25FAB9D4006941CD /* Geshtald.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				969C306025FAB9D4006941CD /* Shared.xcdatamodel */,
+			);
+			currentVersion = 969C306025FAB9D4006941CD /* Shared.xcdatamodel */;
+			path = Geshtald.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 969C305A25FAB9D3006941CD /* Project object */;
+}
