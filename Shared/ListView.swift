@@ -8,21 +8,21 @@
 import SwiftUI
 import CoreData
 
+@available(iOS 15.0, *)
 struct ListView: View {
-    @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \GeshtaldItem.priority, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<GeshtaldItem>
     @State var isCreateSheetPresented = false
     @State var isFiltered = false
+    @ObservedObject var geshtaldModel: GeshtaldModel
     
+    private var requiredArrayOfItems: [GeshtaldItem] {
+        return geshtaldModel.searchString.isEmpty ? geshtaldModel.allItems : geshtaldModel.searchItems
+    }
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                if items.count == 0 {
+                if geshtaldModel.allItems.count == 0 {
                     EmptyView(isCreateSheetPresented: $isCreateSheetPresented)
                 } else {
                     ZStack(alignment: .bottom) {
@@ -30,7 +30,7 @@ struct ListView: View {
                             if isFiltered {
                                 ForEach(GeshtaldItem.availableTypes, id: \.0, content: { item in
                                     
-                                    let filteredItems = items.filter({ $0.convertIntTypeToString == item.0 })
+                                    let filteredItems = requiredArrayOfItems.filter({ $0.convertIntTypeToString == item.0 })
                                     
                                     if filteredItems.count != 0 {
                                         Section(header:
@@ -39,20 +39,38 @@ struct ListView: View {
                                             ForEach(filteredItems) {
                                                 ListItemView(item: $0)
                                             }
-                                            .onDelete(perform: onDelete(offsets:))
-                                            .onMove(perform: onMove(source:destination:))
+                                            .onDelete {_ in
+                                                geshtaldModel.delete(items: filteredItems.map({ $0 }))
+                                            }
+                                            .onMove {
+                                                geshtaldModel.move(items: filteredItems.map({ $0 }),
+                                                                                source: $0,
+                                                                                destination: $1)
+                                            }
                                         }
                                     }
                                 })
                             } else {
-                                ForEach(items) {
+                                ForEach(requiredArrayOfItems) {
                                     ListItemView(item: $0)
                                 }
-                                .onDelete(perform: onDelete(offsets:))
-                                .onMove(perform: onMove(source:destination:))
+                                .onDelete {_ in
+                                    geshtaldModel.delete(items: requiredArrayOfItems.map({ $0 }))
+                                }
+                                .onMove {
+                                    geshtaldModel.move(items: requiredArrayOfItems.map({ $0 }),
+                                                          source: $0,
+                                                          destination: $1)
+                                }
                             }
                         }
-                        .animation(.default)
+                        .searchable(text: $geshtaldModel.searchString) {
+                            SearchSuggestionsView(allItems: geshtaldModel.allItems,
+                                                  searchString: geshtaldModel.searchString)
+                        }
+                        .onSubmit(of: .search) {
+                            geshtaldModel.fetchSearchItems()
+                        }
                         FilterView(isFiltered: $isFiltered)
                     }
                     Divider()
@@ -62,68 +80,36 @@ struct ListView: View {
             .sheet(isPresented: $isCreateSheetPresented, onDismiss: {
                 self.isCreateSheetPresented = false
             }, content: {
-                AddItemView(isShown: $isCreateSheetPresented, priority: items.count)
+                AddItemView(isShown: $isCreateSheetPresented, geshtaldModel: geshtaldModel)
             })
             .listStyle(PlainListStyle())
             .navigationBarTitle("Geshtald Item", displayMode: .large)
-            .edgesIgnoringSafeArea(.top)
+//            .edgesIgnoringSafeArea(.top)
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }
+}
 
-    private func addItem() {
-        withAnimation {
-            let newItem = GeshtaldItem(context: viewContext)
-            newItem.name = "Date()"
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func onDelete(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+struct SearchSuggestionsView: View {
     
-    private func onMove(source: IndexSet, destination: Int) {
-        withAnimation {
-            var revisedItems = items.map{ $0 }
-            revisedItems.move(fromOffsets: source, toOffset: destination )
-            for reverseIndex in stride(from: revisedItems.count - 1, through: 0, by: -1 )
-            {
-                revisedItems[reverseIndex].priority =
-                    Int64(reverseIndex)
-            }
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+    @State var allItems: [GeshtaldItem]
+    @State var searchString: String
+    
+    var body: some View {
+        ForEach(allItems) { item in
+            if item.name.localizedStandardContains(searchString) {
+                Text(item.name).searchCompletion(item.name)
             }
         }
-        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        if #available(iOS 15.0, *) {
+            ListView(geshtaldModel: GeshtaldModel(context: PersistenceController.preview.container.viewContext)).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }

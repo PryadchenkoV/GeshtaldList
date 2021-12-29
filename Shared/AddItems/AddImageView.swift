@@ -12,33 +12,38 @@ struct AddImageView: View {
     @State var showImagePicker: Bool = false
     
     var body: some View {
-        
-        if image == defaultImage {
-            GeometryReader { geometry in
+        Group {
+            if image == defaultImage {
+                GeometryReader { geometry in
+                    Button {
+                        self.showImagePicker = true
+                    } label: {
+                        ZStack(alignment: .center) {
+                            RoundedRectangle(cornerRadius: 20)
+                                .foregroundColor(.secondary.opacity(0.3))
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .foregroundColor(.accentColor)
+                        }
+                    }
+                }
+            } else {
                 Button {
                     self.showImagePicker = true
                 } label: {
-                    ZStack(alignment: .center) {
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.secondary.opacity(0.3))
-                        Image(uiImage: image)
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(.accentColor)
-                    }
-                }
-                .sheet(isPresented: $showImagePicker) {
-                    ImagePickerView(sourceType: .photoLibrary) { image in
-                        self.image = image
-                    }
-                    .onDisappear(perform: { showImagePicker = false })
+                    Image(uiImage: image)
+                        .resizable()
+                        .cornerRadius(20)
+                        .aspectRatio(contentMode: .fit)
                 }
             }
-        } else {
-            Image(uiImage: image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .cornerRadius(20)
+        }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePickerView(sourceType: .photoLibrary) { image in
+                self.image = image
+            }
+            .onDisappear(perform: { showImagePicker = false })
         }
     }
 }

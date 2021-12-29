@@ -16,8 +16,8 @@ extension GeshtaldItem {
         return NSFetchRequest<GeshtaldItem>(entityName: "GeshtaldItem")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var name: String?
+    @NSManaged public var id: UUID
+    @NSManaged public var name: String
     @NSManaged public var info: String?
     @NSManaged public var type: Int64
     @NSManaged public var priority: Int64

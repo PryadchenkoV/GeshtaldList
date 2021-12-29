@@ -11,14 +11,15 @@ let defaultImage = UIImage(systemName: "plus.circle")!
 
 struct AddItemView: View {
 
-    @Environment(\.managedObjectContext) private var viewContext
+//    @Environment(\.managedObjectContext) private var viewContext
     
     @Binding var isShown: Bool
-    @State var priority: Int
     @State var name: String = ""
     @State var description: String = ""
     @State var selectedType: Int = 0
     @State var image: UIImage = defaultImage
+    
+    @ObservedObject var geshtaldModel: GeshtaldModel
     
     var body: some View {
         NavigationView {
@@ -59,10 +60,21 @@ struct AddItemView: View {
                         Section(header: Label("Image", systemImage: "photo.on.rectangle")) {
                             if image == defaultImage {
                                 AddImageView(image: $image)
-                                    .frame(width: min(geometry.size.width, geometry.size.height) - 80.0, height: min(geometry.size.width, geometry.size.height) - 80.0)
+                                    .frame(width: abs(min(geometry.size.width, geometry.size.height) - 80.0), height: abs(min(geometry.size.width, geometry.size.height) - 80.0))
                             } else {
                                 AddImageView(image: $image)
                             }
+                        }
+                        Section {
+                            Button("Create") {
+                                onAdd()
+                                isShown.toggle()
+                            }
+                            .disabled(name.count == 0)
+                            Button("Cancel") {
+                                isShown.toggle()
+                            }
+                            .foregroundColor(.red)
                         }
                     }
                     Spacer()
@@ -75,34 +87,25 @@ struct AddItemView: View {
                 Button("Create") {
                     onAdd()
                     isShown.toggle()
-                })
+                }
+                .disabled(name.count == 0)
+            )
+                
         }
     }
     
     private func onAdd() {
         withAnimation {
-            let newItem = GeshtaldItem(context: viewContext)
-            newItem.id = UUID()
-            newItem.name = name
-            newItem.info = description
-            newItem.imageData = image.pngData()
-            newItem.type = Int64(selectedType)
-            newItem.priority = Int64(priority)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            geshtaldModel.addItem(withName: name,
+                                  description: description,
+                                  imageData: image == defaultImage ? nil : image.pngData(),
+                                  type: Int64(selectedType))
         }
     }
 }
 
 struct AddItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AddItemView(isShown: .constant(true), priority: 0, image: UIImage(systemName: "plus.circle")!)
+        AddItemView(isShown: .constant(true), image: UIImage(systemName: "plus.circle")!, geshtaldModel: GeshtaldModel(context: PersistenceController.preview.container.viewContext))
     }
 }

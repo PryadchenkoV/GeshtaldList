@@ -21,12 +21,12 @@ struct ListItemView: View {
             } else {
                 Image(uiImage: UIImage(data: item.imageData!)!)
                     .resizable()
+                    .cornerRadius(5)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .cornerRadius(5.0)
             }
             VStack(alignment: .leading) {
-                Text(item.name ?? "")
+                Text(item.name)
                     .font(.title)
                 Text(item.convertIntTypeToString)
                     .font(.footnote)

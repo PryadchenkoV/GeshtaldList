@@ -35,16 +35,22 @@ struct FilterView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 0.0) {
-                Capsule()
-                    .frame(width: 50, height: 10, alignment: .center)
-                    .foregroundColor(.secondary)
-                    .padding(.all, 5.0)
-                Toggle("Filter", isOn: $isFiltered)
-                    .padding()
+                HStack {
+                    Spacer()
+                    Capsule()
+                        .frame(width: 50, height: 10, alignment: .center)
+                        .foregroundColor(.secondary)
+                        .padding(.all, 5.0)
+                    Spacer()
+                }
+                if (currentHeight != FilterView.kMinHeight) {
+                    Toggle("Filter", isOn: $isFiltered)
+                        .padding()
+                }
             }
         }
-        .frame(height:currentHeight)
-        .background(Color(red: 220/255, green: 220/255, blue: 220/255))
+        .frame(height: currentHeight)
+        .background(.thinMaterial)
         .cornerRadius(15.0, corners: [.topLeft, .topRight])
         .gesture(DragGesture()
                     .onChanged { value in

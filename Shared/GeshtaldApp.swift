@@ -13,8 +13,12 @@ struct GeshtaldApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ListView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if #available(iOS 15.0, *) {
+                ListView(geshtaldModel: GeshtaldModel(context: persistenceController.container.viewContext))
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }
