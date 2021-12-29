@@ -83,7 +83,7 @@ struct ListView: View {
                 AddItemView(isShown: $isCreateSheetPresented, geshtaldModel: geshtaldModel)
             })
             .listStyle(PlainListStyle())
-            .navigationBarTitle("Geshtald Item", displayMode: .large)
+            .navigationBarTitle("list_view_navigation_title", displayMode: .large)
 //            .edgesIgnoringSafeArea(.top)
             .navigationViewStyle(StackNavigationViewStyle())
         }

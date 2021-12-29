@@ -24,10 +24,10 @@ extension GeshtaldItem {
     @NSManaged public var imageData: Data?
 
     static let availableTypes = [
-        ("Not Selected", "xmark.circle"),
-        ("Book", "book"),
-        ("Film", "film"),
-        ("Game", "gamecontroller")
+        (NSLocalizedString("type_not_selected", comment: "Not selected"), "xmark.circle"),
+        (NSLocalizedString("type_book", comment: "Book"), "book"),
+        (NSLocalizedString("type_film", comment: "Film"), "film"),
+        (NSLocalizedString("type_game", comment: "Game"), "gamecontroller")
     ]
     
     var convertIntTypeToString: String {

@@ -39,6 +39,8 @@
 		E20A826B2677756000D7FAE6 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A82692677756000D7FAE6 /* AddImageView.swift */; };
 		E2A6C477277C56F1006C3429 /* GeshtaldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6C476277C56F1006C3429 /* GeshtaldModel.swift */; };
 		E2A6C478277C56F1006C3429 /* GeshtaldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6C476277C56F1006C3429 /* GeshtaldModel.swift */; };
+		E2A6C47D277C9DF2006C3429 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2A6C480277C9DF2006C3429 /* Localizable.strings */; };
+		E2A6C47E277C9DF2006C3429 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2A6C480277C9DF2006C3429 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,7 @@
 		969C30A425FAC0A8006941CD /* ListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		E20A82692677756000D7FAE6 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
 		E2A6C476277C56F1006C3429 /* GeshtaldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeshtaldModel.swift; sourceTree = "<group>"; };
+		E2A6C47F277C9DF2006C3429 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,7 @@
 		969C305925FAB9D3006941CD = {
 			isa = PBXGroup;
 			children = (
+				E2A6C47C277C99DD006C3429 /* Locs */,
 				969C305E25FAB9D4006941CD /* Shared */,
 				969C306B25FAB9D6006941CD /* iOS */,
 				969C307225FAB9D6006941CD /* macOS */,
@@ -148,6 +152,22 @@
 				E20A82692677756000D7FAE6 /* AddImageView.swift */,
 			);
 			path = AddItems;
+			sourceTree = "<group>";
+		};
+		E2A6C47C277C99DD006C3429 /* Locs */ = {
+			isa = PBXGroup;
+			children = (
+				E2A6C481277C9E9E006C3429 /* en */,
+			);
+			path = Locs;
+			sourceTree = "<group>";
+		};
+		E2A6C481277C9E9E006C3429 /* en */ = {
+			isa = PBXGroup;
+			children = (
+				E2A6C480277C9DF2006C3429 /* Localizable.strings */,
+			);
+			path = en;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				969C307D25FAB9D6006941CD /* Assets.xcassets in Resources */,
+				E2A6C47D277C9DF2006C3429 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				969C307E25FAB9D6006941CD /* Assets.xcassets in Resources */,
+				E2A6C47E277C9DF2006C3429 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +310,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E2A6C480277C9DF2006C3429 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2A6C47F277C9DF2006C3429 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		969C307F25FAB9D6006941CD /* Debug */ = {

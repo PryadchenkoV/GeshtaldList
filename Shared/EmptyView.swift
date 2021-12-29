@@ -13,12 +13,12 @@ struct EmptyView: View {
     
     var body: some View {
         Spacer()
-        Text("Your list is empty :(")
+        Text("empty_list_title")
             .font(.largeTitle)
             .fontWeight(.thin)
             .multilineTextAlignment(.center)
         Button(action: { isCreateSheetPresented = true }, label: {
-            Text("Add")
+            Text("empty_list_add_button")
                 .padding(.horizontal, 25.0)
                 .background(Color.blue)
                 .cornerRadius(5.0)

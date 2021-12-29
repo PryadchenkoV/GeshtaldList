@@ -11,8 +11,6 @@ let defaultImage = UIImage(systemName: "plus.circle")!
 
 struct AddItemView: View {
 
-//    @Environment(\.managedObjectContext) private var viewContext
-    
     @Binding var isShown: Bool
     @State var name: String = ""
     @State var description: String = ""
@@ -26,17 +24,17 @@ struct AddItemView: View {
             VStack {
                 GeometryReader { geometry in
                     Form {
-                        Section(header: Label("Enter Geshtald Item Information", systemImage: "note.text")) {
+                        Section(header: Label("add_item_header_main", systemImage: "note.text")) {
                             HStack {
-                                Text("Name")
-                                TextField("Enter Name", text: $name)
+                                Text("name_title")
+                                TextField("name_placeholder", text: $name)
                                     .font(.body)
                             }
                             HStack(alignment: .center) {
-                                Text("Description")
+                                Text("description_title")
                                 ZStack(alignment: .leading) {
                                     if description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                                        Text("Long Text Field")
+                                        Text("description_placeholder")
 #if os(iOS)
                                             .foregroundColor(Color(UIColor.placeholderText))
 #elseif os(macOS)
@@ -49,7 +47,7 @@ struct AddItemView: View {
                                 }
                             }
                             HStack {
-                                Picker(selection: $selectedType, label: Text("Type")) {
+                                Picker(selection: $selectedType, label: Text("type_title")) {
                                     ForEach(0 ..< GeshtaldItem.availableTypes.count) {
                                         Label(GeshtaldItem.availableTypes[$0].0, systemImage: GeshtaldItem.availableTypes[$0].1)
                                     }
@@ -57,7 +55,7 @@ struct AddItemView: View {
                             }
                         }
                         
-                        Section(header: Label("Image", systemImage: "photo.on.rectangle")) {
+                        Section(header: Label("add_item_header_image", systemImage: "photo.on.rectangle")) {
                             if image == defaultImage {
                                 AddImageView(image: $image)
                                     .frame(width: abs(min(geometry.size.width, geometry.size.height) - 80.0), height: abs(min(geometry.size.width, geometry.size.height) - 80.0))
@@ -66,12 +64,12 @@ struct AddItemView: View {
                             }
                         }
                         Section {
-                            Button("Create") {
+                            Button("button_create_title") {
                                 onAdd()
                                 isShown.toggle()
                             }
                             .disabled(name.count == 0)
-                            Button("Cancel") {
+                            Button("button_cancel_title") {
                                 isShown.toggle()
                             }
                             .foregroundColor(.red)
@@ -80,11 +78,11 @@ struct AddItemView: View {
                     Spacer()
                 }
             }
-            .navigationBarTitle(Text("Creation"), displayMode: .inline)
-            .navigationBarItems(leading: Button("Back") {
+            .navigationBarTitle(Text("add_item_navigation_title"), displayMode: .inline)
+            .navigationBarItems(leading: Button("add_item_navigation_back_button") {
                 isShown.toggle()
             }, trailing:
-                Button("Create") {
+                Button("add_item_navigation_create_button") {
                     onAdd()
                     isShown.toggle()
                 }

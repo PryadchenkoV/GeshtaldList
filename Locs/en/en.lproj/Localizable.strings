@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  Geshtald
+
+  Created by Ivan Pryadchenko on 29.12.2021.
+  
+*/
+ 
+// Add Item View
+"add_item_navigation_title" = "Item Creation";
+"add_item_navigation_back_button" = "Back";
+"add_item_navigation_create_button" = "Create";
+
+"add_item_header_main" = "Enter Geshtald Item Information";
+"name_title" = "Name";
+"name_placeholder" = "Enter Name";
+"description_title" = "Description";
+"description_placeholder" = "Enter Description";
+"type_title" = "Type";
+
+"add_item_header_image" = "Select Image";
+
+"button_create_title" = "Create";
+"button_cancel_title" = "Cancel";
+
+// Filter View
+"filter_toggle_title" = "Filter";
+
+// List View
+"list_view_navigation_title" = "Geshtald List";
+
+// Types
+"type_not_selected" = "Not Selected";
+"type_book" = "Book";
+"type_film" = "Film";
+"type_game" = "Game";
+
+// Empty View
+"empty_list_title" = "Your list is empty :(";
+"empty_list_add_button" = "Add";
+
+// Toolbar View
+"toolbar_view_add_button" = "Add";

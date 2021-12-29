@@ -22,9 +22,10 @@ struct AddImageView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(.secondary.opacity(0.3))
                             Image(uiImage: image)
+                                .renderingMode(.template)
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                                .foregroundColor(.accentColor)
+                                .foregroundColor(.primary)
                         }
                     }
                 }

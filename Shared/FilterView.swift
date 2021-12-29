@@ -44,7 +44,7 @@ struct FilterView: View {
                     Spacer()
                 }
                 if (currentHeight != FilterView.kMinHeight) {
-                    Toggle("Filter", isOn: $isFiltered)
+                    Toggle("filter_toggle_title", isOn: $isFiltered)
                         .padding()
                 }
             }

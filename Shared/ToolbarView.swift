@@ -14,7 +14,7 @@ struct ToolbarView: View {
     var body: some View {
         HStack {
             Button(action: { isCreateSheetPresented = true }, label: {
-                Text("Add")
+                Text("toolbar_view_add_button")
             })
             Spacer()
             EditButton()
