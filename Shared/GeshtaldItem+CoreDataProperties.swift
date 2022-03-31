@@ -22,6 +22,7 @@ extension GeshtaldItem {
     @NSManaged public var type: Int64
     @NSManaged public var priority: Int64
     @NSManaged public var imageData: Data?
+    @NSManaged public var isFavorite: Bool
 
     static let availableTypes = [
         (NSLocalizedString("type_not_selected", comment: "Not selected"), "xmark.circle"),

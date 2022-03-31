@@ -10,6 +10,7 @@ import SwiftUI
 struct ListItemView: View {
     
     var item: GeshtaldItem
+    @ObservedObject var geshtaldModel: GeshtaldModel
     
     var body: some View {
         HStack(alignment: .center) {
@@ -33,12 +34,25 @@ struct ListItemView: View {
                     
             }
             Spacer()
+            Button {
+                geshtaldModel.changeFavoriteState(item)
+            } label: {
+                Group {
+                    if item.isFavorite {
+                        Image(systemName: "star.fill")
+                    } else {
+                        Image(systemName: "star")
+                    }
+                }
+                .foregroundColor(.yellow)
+            }
+            
         }
     }
 }
 
 struct ListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ListItemView(item: GeshtaldItem())
+        ListItemView(item: GeshtaldItem(), geshtaldModel: GeshtaldModel(context: PersistenceController.preview.container.viewContext))
     }
 }

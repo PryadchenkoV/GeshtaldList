@@ -15,9 +15,23 @@ class GeshtaldModel: ObservableObject {
     @Published var allItems: [GeshtaldItem] = []
     @Published var searchItems: [GeshtaldItem] = []
     @Published var searchString: String = ""
+    @Published var isSorted = false {
+        didSet {
+            fetchAll()
+        }
+    }
+    @Published var sortOrderAscending = true {
+        didSet {
+            fetchAll()
+        }
+    }
     
     let context: NSManagedObjectContext
     let logger = Logger()
+    
+    private let prioritySortDescriptor = NSSortDescriptor(keyPath: \GeshtaldItem.priority, ascending: true)
+    private let nameSortDescriptorAscending = NSSortDescriptor(keyPath: \GeshtaldItem.name, ascending: true)
+    private let nameSortDescriptorDiscending = NSSortDescriptor(keyPath: \GeshtaldItem.name, ascending: false)
     
     init(context: NSManagedObjectContext) {
         self.context = context
@@ -32,8 +46,11 @@ class GeshtaldModel: ObservableObject {
     func fetchItems() {
         logger.info("[GeshtaldModel] \(#function)")
         let request = GeshtaldItem.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(keyPath: \GeshtaldItem.priority, ascending: true)
-        request.sortDescriptors = [sortDescriptor]
+        if isSorted {
+            request.sortDescriptors = [(sortOrderAscending ? nameSortDescriptorAscending : nameSortDescriptorDiscending)]
+        } else {
+            request.sortDescriptors = [prioritySortDescriptor]
+        }
         do {
             let fetchResult = try context.fetch(request) as [GeshtaldItem]
             allItems = fetchResult
@@ -46,8 +63,11 @@ class GeshtaldModel: ObservableObject {
         logger.info("[GeshtaldModel] \(#function)")
         let request = GeshtaldItem.fetchRequest()
         request.predicate = NSPredicate(format: "name CONTAINS[c] %@", searchString)
-        let sortDescriptor = NSSortDescriptor(keyPath: \GeshtaldItem.priority, ascending: true)
-        request.sortDescriptors = [sortDescriptor]
+        if isSorted {
+            request.sortDescriptors = [(sortOrderAscending ? nameSortDescriptorAscending : nameSortDescriptorDiscending)]
+        } else {
+            request.sortDescriptors = [prioritySortDescriptor]
+        }
         do {
             let fetchResult = try context.fetch(request) as [GeshtaldItem]
             searchItems = fetchResult
@@ -107,6 +127,18 @@ class GeshtaldModel: ObservableObject {
         for (index, item) in copyItems.enumerated() {
             item.priority = priorities[index]
         }
+        do {
+            try context.save()
+            fetchAll()
+        } catch {
+            let nsError = error as NSError
+            fatalError("[GeshtaldModel] \(#function) Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+    func changeFavoriteState(_ item: GeshtaldItem) {
+        logger.info("[GeshtaldModel] \(#function)")
+        item.isFavorite.toggle()
         do {
             try context.save()
             fetchAll()

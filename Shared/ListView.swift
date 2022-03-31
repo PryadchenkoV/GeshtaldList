@@ -13,6 +13,8 @@ struct ListView: View {
 
     @State var isCreateSheetPresented = false
     @State var isFiltered = false
+    @State var isSorted = false
+    @State var sortOrderAscending = true
     @ObservedObject var geshtaldModel: GeshtaldModel
     
     private var requiredArrayOfItems: [GeshtaldItem] {
@@ -36,8 +38,23 @@ struct ListView: View {
                                         Section(header:
                                                     Label(item.0, systemImage: item.1))
                                         {
-                                            ForEach(filteredItems) {
-                                                ListItemView(item: $0)
+                                            ForEach(filteredItems) { item in
+                                                ListItemView(item: item, geshtaldModel: geshtaldModel)
+                                                    .moveDisabled(geshtaldModel.isSorted)
+                                                    .swipeActions {
+                                                        Button { [item] in
+                                                            geshtaldModel.changeFavoriteState(item)
+                                                        } label: {
+                                                            Image(systemName: "star.fill")
+                                                        }
+                                                        .tint(.yellow)
+//
+                                                        Button(role: .destructive) {
+                                                            geshtaldModel.delete(items: filteredItems.map({ $0 }))
+                                                        } label: {
+                                                            Image(systemName: "trash.fill")
+                                                        }
+                                                    }
                                             }
                                             .onDelete {_ in
                                                 geshtaldModel.delete(items: filteredItems.map({ $0 }))
@@ -51,8 +68,23 @@ struct ListView: View {
                                     }
                                 })
                             } else {
-                                ForEach(requiredArrayOfItems) {
-                                    ListItemView(item: $0)
+                                ForEach(requiredArrayOfItems) { item in
+                                    ListItemView(item: item, geshtaldModel: geshtaldModel)
+                                        .moveDisabled(geshtaldModel.isSorted)
+                                        .swipeActions {
+                                            Button { [item] in
+                                                geshtaldModel.changeFavoriteState(item)
+                                            } label: {
+                                                Image(systemName: "star.fill")
+                                            }
+                                            .tint(.yellow)
+//
+                                            Button(role: .destructive) {
+                                                geshtaldModel.delete(items: requiredArrayOfItems.map({ $0 }))
+                                            } label: {
+                                                Image(systemName: "trash.fill")
+                                            }
+                                        }
                                 }
                                 .onDelete {_ in
                                     geshtaldModel.delete(items: requiredArrayOfItems.map({ $0 }))
@@ -71,10 +103,11 @@ struct ListView: View {
                         .onSubmit(of: .search) {
                             geshtaldModel.fetchSearchItems()
                         }
-                        FilterView(isFiltered: $isFiltered)
+                        FilterView(isFiltered: $isFiltered, isSorted: $geshtaldModel.isSorted, sortOrderAscending: $geshtaldModel.sortOrderAscending)
                     }
                     Divider()
                     ToolbarView(isCreateSheetPresented: $isCreateSheetPresented)
+                        .
                 }
             }
             .sheet(isPresented: $isCreateSheetPresented, onDismiss: {
@@ -84,7 +117,6 @@ struct ListView: View {
             })
             .listStyle(PlainListStyle())
             .navigationBarTitle("list_view_navigation_title", displayMode: .large)
-//            .edgesIgnoringSafeArea(.top)
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }

@@ -25,9 +25,12 @@
 
 // Filter View
 "filter_toggle_title" = "Filter";
+"sort_toggle_title" = "Sort";
+"sort_order_title" = "Sort Order";
 
 // List View
 "list_view_navigation_title" = "Geshtald List";
+"list_view_item_add_favorite" = "Add Favorite";
 
 // Types
 "type_not_selected" = "Not Selected";

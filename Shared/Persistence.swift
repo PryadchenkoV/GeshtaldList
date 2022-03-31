@@ -19,6 +19,7 @@ struct PersistenceController {
             newItem.id = UUID()
             newItem.type = Int64.random(in: 0...Int64(GeshtaldItem.availableTypes.count - 1))
             newItem.priority = Int64(index)
+            newItem.isFavorite = false
         }
         do {
             try viewContext.save()
