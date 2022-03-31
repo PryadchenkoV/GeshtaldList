@@ -107,7 +107,6 @@ struct ListView: View {
                     }
                     Divider()
                     ToolbarView(isCreateSheetPresented: $isCreateSheetPresented)
-                        .
                 }
             }
             .sheet(isPresented: $isCreateSheetPresented, onDismiss: {
